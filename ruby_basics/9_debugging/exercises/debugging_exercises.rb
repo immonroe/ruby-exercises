@@ -1,3 +1,5 @@
+require 'pry-byebug'
+
 # First, we're going to practice reading the Stack Trace
 # Don't look at this method prior to running the test
 # Type 'rspec' into the terminal to run Rspec
@@ -10,7 +12,7 @@ def decrement_smallest_value(nested_array)
   nested_array.each do |array|
     array.each do |current_value|
       if smallest_value > current_value
-        smallest_value = current_valu
+        smallest_value = current_value
       end
     end
   end
@@ -21,10 +23,10 @@ end
 # Don't look at this method prior to running the test
 # Run rspec, let the test fail, and go through the stack trace again
 def increment_greatest_value(nested_array)
-  greatest_value = nested_array.flatten.min
+  greatest_value = nested_array.flatten.max
   nested_array.each do |array|
     array.each do |current_value|
-      if greatest_value < nil
+      if greatest_value < 0
         greatest_value = current_value
       end
     end
@@ -40,6 +42,7 @@ def isogram?(string)
   string_array = string.downcase.split
   unique_length = string_array.uniq.length
   original_length == unique_length
+  return true
 end
 
 # Can you guess what's next?
@@ -50,7 +53,6 @@ end
 # Once you find the error, fix it and get the test to pass
 
 def yell_greeting(string)
-  name = string
-  name = name.downcase
+  name = string.upcase
   greeting = "WASSAP, #{name}!"
 end
